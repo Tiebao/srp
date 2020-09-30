@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='utf-8'?>
+<annotation>
+  <folder>VOC2007</folder>
+  <filename>domain1/100409.jpg</filename>
+  <segmented>0</segmented>
+  <size>
+    <width>284</width>
+    <height>249</height>
+    <depth>3</depth>
+  </size>
+  <object>
+    <name>lighter</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>187</xmin>
+      <ymin>35</ymin>
+      <xmax>281</xmax>
+      <ymax>85</ymax>
+    </bndbox>
+  </object>
+  <object>
+    <name>lighter</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>142</xmin>
+      <ymin>91</ymin>
+      <xmax>218</xmax>
+      <ymax>129</ymax>
+    </bndbox>
+  </object>
+  <object>
+    <name>lighter</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>62</xmin>
+      <ymin>23</ymin>
+      <xmax>147</xmax>
+      <ymax>95</ymax>
+    </bndbox>
+  </object>
+</annotation>

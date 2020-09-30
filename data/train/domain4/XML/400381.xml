@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<annotation>
+  <folder>VOC2007</folder>
+  <filename>domain4/400381.jpg</filename>
+  <segmented>0</segmented>
+  <size>
+    <width>395</width>
+    <height>455</height>
+    <depth>3</depth>
+  </size>
+  <object>
+    <name>nailpolish</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>232</xmin>
+      <ymin>366</ymin>
+      <xmax>339</xmax>
+      <ymax>444</ymax>
+    </bndbox>
+  </object>
+</annotation>

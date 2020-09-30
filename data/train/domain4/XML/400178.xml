@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<annotation>
+  <folder>VOC2007</folder>
+  <filename>domain4/400178.jpg</filename>
+  <segmented>0</segmented>
+  <size>
+    <width>1130</width>
+    <height>633</height>
+    <depth>3</depth>
+  </size>
+  <object>
+    <name>pressure</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>501</xmin>
+      <ymin>176</ymin>
+      <xmax>716</xmax>
+      <ymax>271</ymax>
+    </bndbox>
+  </object>
+  <object>
+    <name>powerbank</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>125</xmin>
+      <ymin>219</ymin>
+      <xmax>263</xmax>
+      <ymax>383</ymax>
+    </bndbox>
+  </object>
+</annotation>

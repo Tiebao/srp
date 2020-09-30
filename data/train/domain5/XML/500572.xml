@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<VpSizeADD>
+  <folder>VOC2007</folder>
+  <filename>domain5/500572.jpg</filename>
+  <segmented>0</segmented>
+  <size>
+    <width>376</width>
+    <height>372</height>
+    <depth>3</depth>
+  </size>
+  <object>
+    <name>knife</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>87</xmin>
+      <ymin>150</ymin>
+      <xmax>174</xmax>
+      <ymax>224</ymax>
+    </bndbox>
+  </object>
+  <VpSize>
+    <Xmin>21</Xmin>
+    <Ymin>33</Ymin>
+    <Xmax>250</Xmax>
+    <Ymax>340</Ymax>
+  </VpSize>
+</VpSizeADD>

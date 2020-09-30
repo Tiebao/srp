@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<VpSizeADD>
+  <folder>VOC2007</folder>
+  <filename>domain5/500156.jpg</filename>
+  <segmented>0</segmented>
+  <size>
+    <width>804</width>
+    <height>388</height>
+    <depth>3</depth>
+  </size>
+  <object>
+    <name>firecrackers</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>71</xmin>
+      <ymin>50</ymin>
+      <xmax>149</xmax>
+      <ymax>107</ymax>
+    </bndbox>
+  </object>
+  <VpSize>
+    <Xmin>430</Xmin>
+    <Ymin>96</Ymin>
+    <Xmax>644</Xmax>
+    <Ymax>349</Ymax>
+  </VpSize>
+  <VpSize>
+    <Xmin>0</Xmin>
+    <Ymin>30</Ymin>
+    <Xmax>149</Xmax>
+    <Ymax>139</Ymax>
+  </VpSize>
+</VpSizeADD>

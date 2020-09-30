@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<annotation>
+  <folder>VOC2007</folder>
+  <filename>domain1/100449.jpg</filename>
+  <segmented>0</segmented>
+  <size>
+    <width>474</width>
+    <height>342</height>
+    <depth>3</depth>
+  </size>
+  <object>
+    <name>scissors</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <check>0</check>
+    <bndbox>
+      <xmin>80</xmin>
+      <ymin>114</ymin>
+      <xmax>164</xmax>
+      <ymax>252</ymax>
+    </bndbox>
+  </object>
+  </annotation>

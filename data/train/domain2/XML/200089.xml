@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='utf-8'?>
+<annotation>
+  <folder>VOC2007</folder>
+  <filename>domain2/200089.jpg</filename>
+  <segmented>0</segmented>
+  <size>
+    <width>888</width>
+    <height>640</height>
+    <depth>3</depth>
+  </size>
+  <object>
+    <name>scissors</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <check>0</check>
+    <bndbox>
+      <xmin>649</xmin>
+      <ymin>131</ymin>
+      <xmax>748</xmax>
+      <ymax>165</ymax>
+    </bndbox>
+  </object>
+  <object>
+    <name>scissors</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <check>0</check>
+    <bndbox>
+      <xmin>665</xmin>
+      <ymin>117</ymin>
+      <xmax>761</xmax>
+      <ymax>158</ymax>
+    </bndbox>
+  </object>
+</annotation>

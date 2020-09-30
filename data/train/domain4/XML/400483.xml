@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='utf-8'?>
+<annotation>
+  <folder>VOC2007</folder>
+  <filename>domain4/400483.jpg</filename>
+  <segmented>0</segmented>
+  <size>
+    <width>1142</width>
+    <height>664</height>
+    <depth>3</depth>
+  </size>
+  <object>
+    <name>pressure</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <check>0</check>
+    <bndbox>
+      <xmin>341</xmin>
+      <ymin>489</ymin>
+      <xmax>658</xmax>
+      <ymax>573</ymax>
+    </bndbox>
+  </object>
+  <object>
+    <name>knife</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <check>0</check>
+    <bndbox>
+      <xmin>957</xmin>
+      <ymin>50</ymin>
+      <xmax>1050</xmax>
+      <ymax>274</ymax>
+    </bndbox>
+  </object>
+  </annotation>

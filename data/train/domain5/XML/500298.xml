@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='utf-8'?>
+<VpSizeADD>
+  <folder>VOC2007</folder>
+  <filename>domain5/500298.jpg</filename>
+  <segmented>0</segmented>
+  <size>
+    <width>804</width>
+    <height>544</height>
+    <depth>3</depth>
+  </size>
+  <object>
+    <name>nailpolish</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>742</xmin>
+      <ymin>271</ymin>
+      <xmax>794</xmax>
+      <ymax>306</ymax>
+    </bndbox>
+  </object>
+  <VpSize>
+    <Xmin>717</Xmin>
+    <Ymin>176</Ymin>
+    <Xmax>801</Xmax>
+    <Ymax>306</Ymax>
+  </VpSize>
+  <VpSize>
+    <Xmin>0</Xmin>
+    <Ymin>125</Ymin>
+    <Xmax>129</Xmax>
+    <Ymax>385</Ymax>
+  </VpSize>
+  <VpSize>
+    <Xmin>250</Xmin>
+    <Ymin>30</Ymin>
+    <Xmax>594</Xmax>
+    <Ymax>510</Ymax>
+  </VpSize>
+</VpSizeADD>

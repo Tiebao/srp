@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='utf-8'?>
+<VpSizeADD>
+  <folder>VOC2007</folder>
+  <filename>domain5/500491.jpg</filename>
+  <segmented>0</segmented>
+  <size>
+    <width>804</width>
+    <height>524</height>
+    <depth>3</depth>
+  </size>
+  <object>
+    <name>slingshot</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>261</xmin>
+      <ymin>295</ymin>
+      <xmax>371</xmax>
+      <ymax>354</ymax>
+    </bndbox>
+  </object>
+  <VpSize>
+    <Xmin>0</Xmin>
+    <Ymin>95</Ymin>
+    <Xmax>74</Xmax>
+    <Ymax>292</Ymax>
+  </VpSize>
+  <VpSize>
+    <Xmin>196</Xmin>
+    <Ymin>89</Ymin>
+    <Xmax>463</Xmax>
+    <Ymax>456</Ymax>
+  </VpSize>
+  <VpSize>
+    <Xmin>581</Xmin>
+    <Ymin>30</Ymin>
+    <Xmax>801</Xmax>
+    <Ymax>490</Ymax>
+  </VpSize>
+</VpSizeADD>

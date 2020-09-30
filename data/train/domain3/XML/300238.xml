@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<annotation>
+  <folder>VOC2007</folder>
+  <filename>domain3/300238.jpg</filename>
+  <segmented>0</segmented>
+  <size>
+    <width>675</width>
+    <height>456</height>
+    <depth>3</depth>
+  </size>
+  <object>
+    <name>lighter</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>307</xmin>
+      <ymin>92</ymin>
+      <xmax>355</xmax>
+      <ymax>170</ymax>
+    </bndbox>
+  </object>
+</annotation>

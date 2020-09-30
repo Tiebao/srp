@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<annotation>
+  <folder>VOC2007</folder>
+  <filename>domain2/200060.jpg</filename>
+  <segmented>0</segmented>
+  <size>
+    <width>612</width>
+    <height>512</height>
+    <depth>3</depth>
+  </size>
+  <object>
+    <name>powerbank</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <check>0</check>
+    <bndbox>
+      <xmin>107</xmin>
+      <ymin>226</ymin>
+      <xmax>237</xmax>
+      <ymax>318</ymax>
+    </bndbox>
+  </object>
+  </annotation>

@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<annotation>
+  <folder>VOC2007</folder>
+  <filename>domain1/100384.jpg</filename>
+  <segmented>0</segmented>
+  <size>
+    <width>514</width>
+    <height>415</height>
+    <depth>3</depth>
+  </size>
+  <object>
+    <name>knife</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <check>0</check>
+    <bndbox>
+      <xmin>278</xmin>
+      <ymin>84</ymin>
+      <xmax>352</xmax>
+      <ymax>205</ymax>
+    </bndbox>
+  </object>
+  </annotation>

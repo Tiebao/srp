@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='utf-8'?>
+<VpSizeADD>
+  <folder>VOC2007</folder>
+  <filename>domain5/500252.jpg</filename>
+  <segmented>0</segmented>
+  <size>
+    <width>804</width>
+    <height>408</height>
+    <depth>3</depth>
+  </size>
+  <object>
+    <name>scissors</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>189</xmin>
+      <ymin>34</ymin>
+      <xmax>239</xmax>
+      <ymax>147</ymax>
+    </bndbox>
+  </object>
+  <object>
+    <name>powerbank</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>224</xmin>
+      <ymin>116</ymin>
+      <xmax>267</xmax>
+      <ymax>208</ymax>
+    </bndbox>
+  </object>
+  <VpSize>
+    <Xmin>0</Xmin>
+    <Ymin>33</Ymin>
+    <Xmax>276</Xmax>
+    <Ymax>268</Ymax>
+  </VpSize>
+  <VpSize>
+    <Xmin>398</Xmin>
+    <Ymin>30</Ymin>
+    <Xmax>801</Xmax>
+    <Ymax>372</Ymax>
+  </VpSize>
+</VpSizeADD>

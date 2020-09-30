@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<annotation>
+  <folder>VOC2007</folder>
+  <filename>domain4/400384.jpg</filename>
+  <segmented>0</segmented>
+  <size>
+    <width>896</width>
+    <height>601</height>
+    <depth>3</depth>
+  </size>
+  <object>
+    <name>handcuffs</name>
+    <pose>Unspecified</pose>
+    <truncated>1</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>785</xmin>
+      <ymin>244</ymin>
+      <xmax>894</xmax>
+      <ymax>377</ymax>
+    </bndbox>
+  </object>
+  <object>
+    <name>zippooil</name>
+    <pose>Unspecified</pose>
+    <truncated>1</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>742</xmin>
+      <ymin>276</ymin>
+      <xmax>892</xmax>
+      <ymax>449</ymax>
+    </bndbox>
+  </object>
+</annotation>

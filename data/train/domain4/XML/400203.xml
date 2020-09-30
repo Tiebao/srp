@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<annotation>
+  <folder>VOC2007</folder>
+  <filename>domain4/400203.jpg</filename>
+  <segmented>0</segmented>
+  <size>
+    <width>878</width>
+    <height>700</height>
+    <depth>3</depth>
+  </size>
+  <object>
+    <name>slingshot</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>312</xmin>
+      <ymin>182</ymin>
+      <xmax>435</xmax>
+      <ymax>372</ymax>
+    </bndbox>
+  </object>
+  <object>
+    <name>firecrackers</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>73</xmin>
+      <ymin>396</ymin>
+      <xmax>337</xmax>
+      <ymax>598</ymax>
+    </bndbox>
+  </object>
+</annotation>

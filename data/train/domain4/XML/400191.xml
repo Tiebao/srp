@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<annotation>
+  <folder>VOC2007</folder>
+  <filename>domain4/400191.jpg</filename>
+  <segmented>0</segmented>
+  <size>
+    <width>619</width>
+    <height>482</height>
+    <depth>3</depth>
+  </size>
+  <object>
+    <name>zippooil</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>63</xmin>
+      <ymin>184</ymin>
+      <xmax>169</xmax>
+      <ymax>382</ymax>
+    </bndbox>
+  </object>
+  <object>
+    <name>knife</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>121</xmin>
+      <ymin>222</ymin>
+      <xmax>196</xmax>
+      <ymax>350</ymax>
+    </bndbox>
+  </object>
+  </annotation>

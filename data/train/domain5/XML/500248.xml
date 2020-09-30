@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<VpSizeADD>
+  <folder>VOC2007</folder>
+  <filename>domain5/500248.jpg</filename>
+  <segmented>0</segmented>
+  <size>
+    <width>804</width>
+    <height>380</height>
+    <depth>3</depth>
+  </size>
+  <object>
+    <name>scissors</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>351</xmin>
+      <ymin>134</ymin>
+      <xmax>431</xmax>
+      <ymax>234</ymax>
+    </bndbox>
+  </object>
+  <VpSize>
+    <Xmin>362</Xmin>
+    <Ymin>69</Ymin>
+    <Xmax>517</Xmax>
+    <Ymax>253</Ymax>
+  </VpSize>
+  <VpSize>
+    <Xmin>0</Xmin>
+    <Ymin>30</Ymin>
+    <Xmax>205</Xmax>
+    <Ymax>347</Ymax>
+  </VpSize>
+</VpSizeADD>

@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<annotation>
+  <folder>VOC2007</folder>
+  <filename>domain5/500461.jpg</filename>
+  <segmented>0</segmented>
+  <size>
+    <width>804</width>
+    <height>312</height>
+    <depth>3</depth>
+  </size>
+  <object>
+    <name>zippooil</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>488</xmin>
+      <ymin>81</ymin>
+      <xmax>548</xmax>
+      <ymax>163</ymax>
+    </bndbox>
+  </object>
+  <object>
+    <name>lighter</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>542</xmin>
+      <ymin>159</ymin>
+      <xmax>554</xmax>
+      <ymax>216</ymax>
+    </bndbox>
+  </object>
+  </annotation>

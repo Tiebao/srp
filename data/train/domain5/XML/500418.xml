@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<VpSizeADD>
+  <folder>VOC2007</folder>
+  <filename>domain5/500418.jpg</filename>
+  <segmented>0</segmented>
+  <size>
+    <width>804</width>
+    <height>344</height>
+    <depth>3</depth>
+  </size>
+  <object>
+    <name>handcuffs</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>32</xmin>
+      <ymin>171</ymin>
+      <xmax>96</xmax>
+      <ymax>274</ymax>
+    </bndbox>
+  </object>
+  <VpSize>
+    <Xmin>47</Xmin>
+    <Ymin>169</Ymin>
+    <Xmax>103</Xmax>
+    <Ymax>288</Ymax>
+  </VpSize>
+  <VpSize>
+    <Xmin>673</Xmin>
+    <Ymin>37</Ymin>
+    <Xmax>801</Xmax>
+    <Ymax>311</Ymax>
+  </VpSize>
+</VpSizeADD>

@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<VpSizeADD>
+  <folder>VOC2007</folder>
+  <filename>domain5/500367.jpg</filename>
+  <segmented>0</segmented>
+  <size>
+    <width>804</width>
+    <height>304</height>
+    <depth>3</depth>
+  </size>
+  <object>
+    <name>pressure</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>149</xmin>
+      <ymin>93</ymin>
+      <xmax>239</xmax>
+      <ymax>209</ymax>
+    </bndbox>
+  </object>
+  <VpSize>
+    <Xmin>161</Xmin>
+    <Ymin>84</Ymin>
+    <Xmax>284</Xmax>
+    <Ymax>210</Ymax>
+  </VpSize>
+  <VpSize>
+    <Xmin>476</Xmin>
+    <Ymin>30</Ymin>
+    <Xmax>801</Xmax>
+    <Ymax>270</Ymax>
+  </VpSize>
+</VpSizeADD>
