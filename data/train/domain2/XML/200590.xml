@@ -1,4 +1,3 @@
-<?xml version='1.0' encoding='utf-8'?>
 <annotation>
   <folder>VOC2007</folder>
   <filename>domain2/200590.jpg</filename>
@@ -8,6 +7,42 @@
     <height>604</height>
     <depth>3</depth>
   </size>
+  <object>
+    <name>normal</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>141</xmin>
+      <ymin>154</ymin>
+      <xmax>396</xmax>
+      <ymax>349</ymax>
+    </bndbox>
+  </object>
+  <object>
+    <name>normal</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>137</xmin>
+      <ymin>163</ymin>
+      <xmax>446</xmax>
+      <ymax>364</ymax>
+    </bndbox>
+  </object>
+  <object>
+    <name>normal</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>148</xmin>
+      <ymin>151</ymin>
+      <xmax>421</xmax>
+      <ymax>440</ymax>
+    </bndbox>
+  </object>
   <object>
     <name>powerbank</name>
     <pose>Unspecified</pose>
@@ -20,4 +55,4 @@
       <ymax>141</ymax>
     </bndbox>
   </object>
-  </annotation>
+</annotation>

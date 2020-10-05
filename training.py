@@ -2,12 +2,14 @@
 import sys
 import argparse
 import datetime
+import logging
 import torch
 import torch.nn as nn
 from datasets import XrayDateset
 from torch.utils.data import DataLoader
 # %%
-
+log = logging.getLogger(__name__)
+log.setLevel(logging.DEBUG)
 
 class XrayTrainApp:
     def __init__(self, sys_argv=None):
