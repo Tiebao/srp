@@ -1,4 +1,3 @@
-<?xml version='1.0' encoding='utf-8'?>
 <annotation>
   <folder>VOC2007</folder>
   <filename>domain2/200256.jpg</filename>
@@ -8,6 +7,42 @@
     <height>472</height>
     <depth>3</depth>
   </size>
+  <object>
+    <name>normal</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>141</xmin>
+      <ymin>161</ymin>
+      <xmax>263</xmax>
+      <ymax>380</ymax>
+    </bndbox>
+  </object>
+  <object>
+    <name>normal</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>117</xmin>
+      <ymin>194</ymin>
+      <xmax>277</xmax>
+      <ymax>332</ymax>
+    </bndbox>
+  </object>
+  <object>
+    <name>normal</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>87</xmin>
+      <ymin>97</ymin>
+      <xmax>199</xmax>
+      <ymax>292</ymax>
+    </bndbox>
+  </object>
   <object>
     <name>knife</name>
     <pose>Unspecified</pose>
@@ -21,4 +56,4 @@
       <ymax>256</ymax>
     </bndbox>
   </object>
-  </annotation>
+</annotation>

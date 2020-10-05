@@ -1,4 +1,3 @@
-<?xml version='1.0' encoding='utf-8'?>
 <annotation>
   <folder>VOC2007</folder>
   <filename>domain4/400432.jpg</filename>
@@ -33,6 +32,18 @@
     </bndbox>
   </object>
   <object>
+    <name>normal</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>447</xmin>
+      <ymin>218</ymin>
+      <xmax>788</xmax>
+      <ymax>517</ymax>
+    </bndbox>
+  </object>
+  <object>
     <name>pressure</name>
     <pose>Unspecified</pose>
     <truncated>1</truncated>
@@ -44,4 +55,4 @@
       <ymax>405</ymax>
     </bndbox>
   </object>
-  </annotation>
+</annotation>

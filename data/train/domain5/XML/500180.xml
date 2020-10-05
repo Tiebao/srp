@@ -1,4 +1,3 @@
-<?xml version='1.0' encoding='utf-8'?>
 <VpSizeADD>
   <folder>VOC2007</folder>
   <filename>domain5/500180.jpg</filename>
@@ -38,6 +37,30 @@
     <Xmax>551</Xmax>
     <Ymax>427</Ymax>
   </VpSize>
+  <object>
+    <name>normal</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>415</xmin>
+      <ymin>98</ymin>
+      <xmax>660</xmax>
+      <ymax>315</ymax>
+    </bndbox>
+  </object>
+  <object>
+    <name>normal</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>357</xmin>
+      <ymin>100</ymin>
+      <xmax>598</xmax>
+      <ymax>299</ymax>
+    </bndbox>
+  </object>
   <VpSize>
     <Xmin>726</Xmin>
     <Ymin>30</Ymin>

@@ -9,10 +9,17 @@ from PIL import Image
 from torch.utils.data import Dataset
 from functools import lru_cache
 from torchvision import transforms
+from torch.nn.functional import one_hot
 
 # 定义标注框的结构
 candidate_info = namedtuple(
     'candidate_info', 'pic_id, candidate_id, object_name, width, height, xmin, ymin, xmax, ymax')
+object_name_to_index = {'normal': 0, 'lighter': 1,
+                        'pressure': 2, 'knife': 3,
+                        'scissors': 4, 'powerbank': 5,
+                        'zippooil': 6, 'handcuffs': 7,
+                        'slingshot': 8, 'firecrackers': 9,
+                        'nailpolish': 10}
 
 
 @lru_cache
@@ -100,13 +107,22 @@ class XrayDateset(Dataset):
             Args:
                 index(int): 下标
             Returns:
-                pic_slice(PIL.Image): 图片的分割
+                slice_tensor(torch.tensor): 图片的分割
+                label(torch.tensor): 该分割所属分类的概率分布
                 candidate_info(namedtumple): 该分割对应的标注框
         """
+
+        compose = transforms.Compose([transforms.ToTensor(),
+                                      transforms.Resize((224, 224))
+                                      ])
+
         candidate_info = self.candidate_info_list[index]
         pic_slice = get_pic_slice(candidate_info)
 
-        return (pic_slice, candidate_info)
+        slice_tensor = compose(pic_slice)
+        object_name_index = object_name_to_index[candidate_info.object_name]
+        label = one_hot(torch.tensor(object_name_index), num_classes=11)
+        return slice_tensor, label, candidate_info
 
 
 # %%
