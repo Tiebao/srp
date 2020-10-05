@@ -67,8 +67,10 @@ class XrayDateset(Dataset):
     """ 数据集的类
         Args:
             is_val(bool): 为真则返回验证集，否则返回训练集。默认为假
+
             val_stride(int): 验证集的步长，即每隔多长取一个验证集，
                 获取训练集和验证集时需保证该值相同。默认为0
+
             pic_id(string, 可选): 只获取对应ID的图片，默认为None
     """
 
