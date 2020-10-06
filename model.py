@@ -34,7 +34,7 @@ class XrayModel(nn.Module):
         self.block3 = BasicBlock(conv_channels * 2, conv_channels * 4)
         self.block4 = BasicBlock(conv_channels * 4, conv_channels * 8)
 
-        self.head_linear = nn.Linear(1, 2)
+        self.head_linear = nn.Linear(37632, 11)
         self.head_softmax = nn.Softmax(dim=1)
 
         self._init_weights()

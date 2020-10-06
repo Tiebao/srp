@@ -108,21 +108,22 @@ class XrayDateset(Dataset):
                 index(int): 下标
             Returns:
                 slice_tensor(torch.tensor): 图片的分割
-                label(torch.tensor): 该分割所属分类的概率分布
+                object_name_index(torch.tensor): 该分割所属分类的索引
                 candidate_info(namedtumple): 该分割对应的标注框
         """
 
-        compose = transforms.Compose([transforms.ToTensor(),
-                                      transforms.Resize((224, 224))
-                                      ])
+        compose = transforms.Compose([
+            transforms.Resize((224, 224)),
+            transforms.ToTensor(),
+        ])
 
         candidate_info = self.candidate_info_list[index]
         pic_slice = get_pic_slice(candidate_info)
 
         slice_tensor = compose(pic_slice)
         object_name_index = object_name_to_index[candidate_info.object_name]
-        label = one_hot(torch.tensor(object_name_index), num_classes=11)
-        return slice_tensor, label, candidate_info
+        # label = one_hot(torch.tensor(object_name_index), num_classes=11)
+        return slice_tensor, object_name_index, candidate_info
 
 
 # %%
