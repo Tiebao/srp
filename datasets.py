@@ -3,6 +3,7 @@ import glob
 from collections import Counter, namedtuple
 import torch
 import copy
+import logging
 from lxml import etree
 from matplotlib import pyplot as plt
 from PIL import Image
@@ -10,6 +11,11 @@ from torch.utils.data import Dataset
 from functools import lru_cache
 from torchvision import transforms
 from torch.nn.functional import one_hot
+
+log = logging.getLogger(__name__)
+log.setLevel(logging.INFO)
+sh = logging.StreamHandler()
+log.addHandler(sh)
 
 # 定义标注框的结构
 candidate_info = namedtuple(
@@ -94,6 +100,12 @@ class XrayDateset(Dataset):
         elif val_stride > 0:
             del self.candidate_info_list[::val_stride]
             assert self.candidate_info_list
+
+        log.info("{!r}: {} {} samples".format(
+            self,
+            len(self.candidate_info_list),
+            "validation" if is_val else "training"
+        ))
 
     def __len__(self):
         """ 获取数据集的长度
