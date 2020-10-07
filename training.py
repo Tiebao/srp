@@ -14,11 +14,6 @@ from tqdm import tqdm
 log = logging.getLogger(__name__)
 log.setLevel(logging.DEBUG)
 
-METRICS_LABEL_INDEX = 0
-METRICS_PRED_INDEX = 1
-METRICS_LOSS_INDEX = 2
-METRICS_SIZE = 3
-
 
 class XrayTrainApp:
     def __init__(self, sys_argv=None):
@@ -73,39 +68,60 @@ class XrayTrainApp:
 
     def train(self, epoch_index, train_dl):
         self.model.train()
-        train_metrics = torch.zeros(METRICS_SIZE,
-                                    len(train_dl.dataset),
-                                    device=self.device)
+
+        metrics = {}
+        metrics_loss = torch.zeros(len(train_dl.dataset), device=self.device)
+        metrics_label = torch.zeros(len(train_dl.dataset), device=self.device)
+        metrics_pred = torch.zeros(
+            len(train_dl.dataset), 11, device=self.device)
+        metrics['loss'] = metrics_loss
+        metrics['label'] = metrics_label
+        metrics['pred'] = metrics_pred
+
         for batch_index, batch_tuple in tqdm(enumerate(train_dl), total=len(train_dl.dataset)):
             self.optimizer.zero_gard()
             loss = self.compute_batch_loss(
                 batch_index,
                 batch_tuple,
                 train_dl.batch_size,
-                train_metrics)
+                metrics)
             loss.backward()
             self.optimizer.step()
 
         self.total_train_samples_count += len(train_dl.dataset)
 
-        return train_metrics.to('cpu')
+        metrics['loss'] = metrics['loss'].to('cpu')
+        metrics['label'] = metrics['label'].to('cpu')
+        metrics['pred'] = metrics['pred'].to('cpu')
+        return metrics
 
     def validate(self, epoch_index, val_dl):
         with torch.no_grad():
             self.model.eval()
-            val_metrics = torch.zeros(METRICS_SIZE,
-                                      len(val_dl.dataset),
-                                      device=self.device)
+
+            metrics = {}
+            metrics_loss = torch.zeros(len(val_dl.dataset), device=self.device)
+            metrics_label = torch.zeros(
+                len(val_dl.dataset), device=self.device)
+            metrics_pred = torch.zeros(
+                len(val_dl.dataset), 11, device=self.device)
+            metrics['loss'] = metrics_loss
+            metrics['label'] = metrics_label
+            metrics['pred'] = metrics_pred
+
             for batch_index, batch_tuple in tqdm(enumerate(val_dl), total=len(val_dl.dataset)):
                 self.compute_batch_loss(
                     batch_index,
                     batch_tuple,
                     val_dl.batch_size,
-                    val_metrics)
+                    metrics)
 
-        return val_metrics.to('cpu')
+        metrics['loss'] = metrics['loss'].to('cpu')
+        metrics['label'] = metrics['label'].to('cpu')
+        metrics['pred'] = metrics['pred'].to('cpu')
+        return metrics
 
-    def compute_batch_loss(self, batch_index, batch_tuple, batch_size, train_metrics):
+    def compute_batch_loss(self, batch_index, batch_tuple, batch_size, metrics):
         input_batch, label_batch, candidate_batch = batch_tuple
         slice_batch_gpu = input_batch.to(self.device, non_blocking=True)
         label_batch_gpu = label_batch.to(self.device, non_blocking=True)
@@ -120,34 +136,14 @@ class XrayTrainApp:
         # label_batch.size(0) 主要是考虑到最后一个批次大小可能不等于batch_size
         end_index = start_index + label_batch.size(0)
 
-        train_metrics[METRICS_LABEL_INDEX,
-                      start_index:end_index] = label_batch_gpu.detach()
-        train_metrics[METRICS_LOSS_INDEX,
-                      start_index:end_index] = loss_gpu.detach()
-
-        # 此处存疑
-        for batch_index, metrics_index in enumerate(range(start_index, end_index)):
-            train_metrics[METRICS_PRED_INDEX, metrics_index] = \
-                probability_batch_gpu[batch_index,
-                                      label_batch_gpu[batch_index]].detach()
+        metrics['label'][start_index:end_index] = label_batch_gpu.detach()
+        metrics['loss'][start_index:end_index] = loss_gpu.detach()
+        metrics['pred'][start_index:end_index] = probability_batch_gpu.detach()
 
         return loss_gpu.mean()
 
-    def log_metrics(self, epoch_index, mode, metrics, classification_threshold=0.5):
-        normal_label_mask = metrics[METRICS_LABEL_INDEX] == 0
-        lighter_label_mask = metrics[METRICS_LABEL_INDEX] == 1
-        pressure_label_mask = metrics[METRICS_LABEL_INDEX] == 2
-        knife_label_mask = metrics[METRICS_LABEL_INDEX] == 3
-        scissors_label_mask = metrics[METRICS_LABEL_INDEX] == 4
-        powerbank_label_mask = metrics[METRICS_LABEL_INDEX] == 5
-        zippooil_label_mask = metrics[METRICS_LABEL_INDEX] == 6
-        handcuffs_label_mask = metrics[METRICS_LABEL_INDEX] == 7
-        slingshot_label_mask = metrics[METRICS_LABEL_INDEX] == 8
-        firecrackers_label_mask = metrics[METRICS_LABEL_INDEX] == 9
-        nailpolish_label_mask = metrics[METRICS_LABEL_INDEX] == 10
-
+    def log_metric(self, epoch_index, mode, metrics, classification_threshold=0.5):
         
-
 
     def main(self):
         train_dl = self.init_train_dataloader()
