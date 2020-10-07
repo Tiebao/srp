@@ -76,7 +76,7 @@ class XrayTrainApp:
         train_metrics = torch.zeros(METRICS_SIZE,
                                     len(train_dl.dataset),
                                     device=self.device)
-        for batch_index, batch_tuple in tqdm(enumerate(train_dl)):
+        for batch_index, batch_tuple in tqdm(enumerate(train_dl), total=len(train_dl.dataset)):
             self.optimizer.zero_gard()
             loss = self.compute_batch_loss(
                 batch_index,
@@ -89,6 +89,21 @@ class XrayTrainApp:
         self.total_train_samples_count += len(train_dl.dataset)
 
         return train_metrics.to('cpu')
+
+    def validate(self, epoch_index, val_dl):
+        with torch.no_grad():
+            self.model.eval()
+            val_metrics = torch.zeros(METRICS_SIZE,
+                                      len(val_dl.dataset),
+                                      device=self.device)
+            for batch_index, batch_tuple in tqdm(enumerate(val_dl), total=len(val_dl.dataset)):
+                self.compute_batch_loss(
+                    batch_index,
+                    batch_tuple,
+                    val_dl.batch_size,
+                    val_metrics)
+
+        return val_metrics.to('cpu')
 
     def compute_batch_loss(self, batch_index, batch_tuple, batch_size, train_metrics):
         input_batch, label_batch, candidate_batch = batch_tuple
@@ -113,7 +128,26 @@ class XrayTrainApp:
         # 此处存疑
         for batch_index, metrics_index in enumerate(range(start_index, end_index)):
             train_metrics[METRICS_PRED_INDEX, metrics_index] = \
-                probability_batch_gpu[batch_index, label_batch_gpu[batch_index]].detach()
+                probability_batch_gpu[batch_index,
+                                      label_batch_gpu[batch_index]].detach()
+
+        return loss_gpu.mean()
+
+    def log_metrics(self, epoch_index, mode, metrics, classification_threshold=0.5):
+        normal_label_mask = metrics[METRICS_LABEL_INDEX] == 0
+        lighter_label_mask = metrics[METRICS_LABEL_INDEX] == 1
+        pressure_label_mask = metrics[METRICS_LABEL_INDEX] == 2
+        knife_label_mask = metrics[METRICS_LABEL_INDEX] == 3
+        scissors_label_mask = metrics[METRICS_LABEL_INDEX] == 4
+        powerbank_label_mask = metrics[METRICS_LABEL_INDEX] == 5
+        zippooil_label_mask = metrics[METRICS_LABEL_INDEX] == 6
+        handcuffs_label_mask = metrics[METRICS_LABEL_INDEX] == 7
+        slingshot_label_mask = metrics[METRICS_LABEL_INDEX] == 8
+        firecrackers_label_mask = metrics[METRICS_LABEL_INDEX] == 9
+        nailpolish_label_mask = metrics[METRICS_LABEL_INDEX] == 10
+
+        
+
 
     def main(self):
         train_dl = self.init_train_dataloader()
