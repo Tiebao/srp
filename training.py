@@ -220,38 +220,35 @@ class XrayTrainApp:
         nailpolish_correct = int(
             (nailpolish_label_mask & nailpolish_pred_mask).sum())
 
-        try:
-            metrics['correct/all'] = (normal_correct + lighter_correct
-                                      + pressure_correct + knife_correct
-                                      + scissors_correct + powerbank_correct
-                                      + zippooil_correct + handcuffs_correct
-                                      + slingshot_correct + firecrackers_correct
-                                      + nailpolish_correct) / np.float32(metrics['label'].shape[0]) * 100
-            metrics['loss/all'] = metrics['loss'].mean()
-            metrics['normal_precision'] = normal_correct / \
-                np.float32(normal_pred_count) * 100
-            metrics['lighter_precision'] = lighter_correct / \
-                np.float32(lighter_pred_count) * 100
-            metrics['pressure_precision'] = pressure_correct / \
-                np.float32(pressure_pred_count) * 100
-            metrics['knife_precision'] = knife_correct / \
-                np.float32(knife_pred_count) * 100
-            metrics['scissors_precision'] = scissors_correct / \
-                np.float32(scissors_pred_count) * 100
-            metrics['powerbank_precision'] = powerbank_correct / \
-                np.float32(powerbank_pred_count) * 100
-            metrics['zippooil_precision'] = zippooil_correct / \
-                np.float32(zippooil_pred_count) * 100
-            metrics['handcuffs_precision'] = handcuffs_correct / \
-                np.float32(handcuffs_pred_count) * 100
-            metrics['slingshot_precision'] = slingshot_correct / \
-                np.float32(slingshot_pred_count) * 100
-            metrics['firecrackers_precision'] = firecrackers_correct / \
-                np.float32(firecrackers_pred_count) * 100
-            metrics['nailpolish_precision'] = nailpolish_correct / \
-                np.float32(nailpolish_pred_count) * 100
-        except ZeroDivisionError:
-            pass
+        metrics['correct/all'] = (normal_correct + lighter_correct
+                                    + pressure_correct + knife_correct
+                                    + scissors_correct + powerbank_correct
+                                    + zippooil_correct + handcuffs_correct
+                                    + slingshot_correct + firecrackers_correct
+                                    + nailpolish_correct) / np.float32(metrics['label'].shape[0]) * 100
+        metrics['loss/all'] = metrics['loss'].mean()
+        metrics['normal_precision'] = normal_correct / \
+            np.float32(normal_pred_count) * 100
+        metrics['lighter_precision'] = lighter_correct / \
+            np.float32(lighter_pred_count) * 100
+        metrics['pressure_precision'] = pressure_correct / \
+            np.float32(pressure_pred_count) * 100
+        metrics['knife_precision'] = knife_correct / \
+            np.float32(knife_pred_count) * 100
+        metrics['scissors_precision'] = scissors_correct / \
+            np.float32(scissors_pred_count) * 100
+        metrics['powerbank_precision'] = powerbank_correct / \
+            np.float32(powerbank_pred_count) * 100
+        metrics['zippooil_precision'] = zippooil_correct / \
+            np.float32(zippooil_pred_count) * 100
+        metrics['handcuffs_precision'] = handcuffs_correct / \
+            np.float32(handcuffs_pred_count) * 100
+        metrics['slingshot_precision'] = slingshot_correct / \
+            np.float32(slingshot_pred_count) * 100
+        metrics['firecrackers_precision'] = firecrackers_correct / \
+            np.float32(firecrackers_pred_count) * 100
+        metrics['nailpolish_precision'] = nailpolish_correct / \
+            np.float32(nailpolish_pred_count) * 100
 
         log.info(("Epoch{} {:12} {loss/all:.4f} loss, {correct/all:.4f}% correct").format(
             epoch_index, mode, **metrics))
