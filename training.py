@@ -17,6 +17,7 @@ log.setLevel(logging.INFO)
 sh = logging.StreamHandler()
 log.addHandler(sh)
 
+
 class XrayTrainApp:
     def __init__(self, sys_argv=None):
         if sys_argv is None:
@@ -160,7 +161,7 @@ class XrayTrainApp:
         nailpolish_label_mask = metrics['label'] == 10
 
         # 如果预测的概率全部小于threshold，则分类为normal
-        normal_pred_mask = metrics['pred'][:, 0] >= classification_threshold + (
+        normal_pred_mask = (metrics['pred'][:, 0] >= classification_threshold) + (
             metrics['pred'] < classification_threshold).all(dim=1)
         lighter_pred_mask = metrics['pred'][:, 1] >= classification_threshold
         pressure_pred_mask = metrics['pred'][:, 2] >= classification_threshold
@@ -221,81 +222,82 @@ class XrayTrainApp:
 
         try:
             metrics['correct/all'] = (normal_correct + lighter_correct
-                                    + pressure_correct + knife_correct
-                                    + scissors_correct + powerbank_correct
-                                    + zippooil_correct + handcuffs_correct
-                                    + slingshot_correct + firecrackers_correct
-                                    + nailpolish_correct) / np.float32(metrics['label'].shape[0]) * 100
+                                      + pressure_correct + knife_correct
+                                      + scissors_correct + powerbank_correct
+                                      + zippooil_correct + handcuffs_correct
+                                      + slingshot_correct + firecrackers_correct
+                                      + nailpolish_correct) / np.float32(metrics['label'].shape[0]) * 100
+            metrics['loss/all'] = metrics['loss'].mean()
             metrics['normal_precision'] = normal_correct / \
-                float(normal_pred_count) * 100
+                np.float32(normal_pred_count) * 100
             metrics['lighter_precision'] = lighter_correct / \
-                float(lighter_pred_count) * 100
+                np.float32(lighter_pred_count) * 100
             metrics['pressure_precision'] = pressure_correct / \
-                float(pressure_pred_count) * 100
+                np.float32(pressure_pred_count) * 100
             metrics['knife_precision'] = knife_correct / \
-                float(knife_pred_count) * 100
+                np.float32(knife_pred_count) * 100
             metrics['scissors_precision'] = scissors_correct / \
-                float(scissors_pred_count) * 100
+                np.float32(scissors_pred_count) * 100
             metrics['powerbank_precision'] = powerbank_correct / \
-                float(powerbank_pred_count) * 100
+                np.float32(powerbank_pred_count) * 100
             metrics['zippooil_precision'] = zippooil_correct / \
-                float(zippooil_pred_count) * 100
+                np.float32(zippooil_pred_count) * 100
             metrics['handcuffs_precision'] = handcuffs_correct / \
-                float(handcuffs_pred_count) * 100
+                np.float32(handcuffs_pred_count) * 100
             metrics['slingshot_precision'] = slingshot_correct / \
-                float(slingshot_pred_count) * 100
+                np.float32(slingshot_pred_count) * 100
             metrics['firecrackers_precision'] = firecrackers_correct / \
-                float(firecrackers_pred_count) * 100
+                np.float32(firecrackers_pred_count) * 100
             metrics['nailpolish_precision'] = nailpolish_correct / \
-                float(nailpolish_pred_count) * 100
+                np.float32(nailpolish_pred_count) * 100
         except ZeroDivisionError:
             pass
 
-        log.info(("Epoch{} {:10} {loss:.4f} loss, " +
-                  "{correct/all:.4f}% correct").format(epoch_index, mode, **metrics))
+        log.info(("Epoch{} {:12} {loss/all:.4f} loss, {correct/all:.4f}% correct").format(
+            epoch_index, mode, **metrics))
         log.info(
-            ("Epoch{} {:10} {normal_precision:.4f}% precision ({} of {})").format(
-                epoch_index, mode + 'normal', normal_correct, normal_pred_count, **metrics)
+            ("Epoch{} {:12} {normal_precision:.4f}% precision ({} of {})").format(
+                epoch_index, mode + '  normal', normal_correct, normal_pred_count, **metrics)
         )
         log.info(
-            ("Epoch{} {:10} {lighter_precision:.4f}% precision ({} of {})").format(
-                epoch_index, mode + 'lighter', lighter_correct, lighter_pred_count, **metrics)
+            ("Epoch{} {:12} {lighter_precision:.4f}% precision ({} of {})").format(
+                epoch_index, mode + '  lighter', lighter_correct, lighter_pred_count, **metrics)
         )
         log.info(
-            ("Epoch{} {:10} {pressure_precision:.4f}% precision ({} of {})").format(
-                epoch_index, mode + 'pressure', pressure_correct, pressure_pred_count, **metrics)
+            ("Epoch{} {:12} {pressure_precision:.4f}% precision ({} of {})").format(
+                epoch_index, mode + '  pressure', pressure_correct, pressure_pred_count, **metrics)
         )
         log.info(
-            ("Epoch{} {:10} {knife_precision:.4f}% precision ({} of {})").format(
-                epoch_index, mode + 'knife', knife_correct, knife_pred_count, **metrics)
+            ("Epoch{} {:12} {knife_precision:.4f}% precision ({} of {})").format(
+                epoch_index, mode + '  knife', knife_correct, knife_pred_count, **metrics)
         )
         log.info(
-            ("Epoch{} {:10} {scissors_precision:.4f}% precision ({} of {})").format(
-                epoch_index, mode + 'scissors', scissors_correct, scissors_pred_count, **metrics)
+            ("Epoch{} {:12} {scissors_precision:.4f}% precision ({} of {})").format(
+                epoch_index, mode + '  scissors', scissors_correct, scissors_pred_count, **metrics)
         )
         log.info(
-            ("Epoch{} {:10} {powerbank_precision:.4f}% precision ({} of {})").format(
-                epoch_index, mode + 'powerbank', powerbank_correct, powerbank_pred_count, **metrics)
+            ("Epoch{} {:12} {powerbank_precision:.4f}% precision ({} of {})").format(
+                epoch_index, mode + '  powerbank', powerbank_correct, powerbank_pred_count, **metrics)
         )
         log.info(
-            ("Epoch{} {:10} {zippooil_precision:.4f}% precision ({} of {})").format(
-                epoch_index, mode + 'zippooil', zippooil_correct, zippooil_pred_count, **metrics)
+            ("Epoch{} {:12} {zippooil_precision:.4f}% precision ({} of {})").format(
+                epoch_index, mode + '  zippooil', zippooil_correct, zippooil_pred_count, **metrics)
         )
         log.info(
-            ("Epoch{} {:10} {handcuffs_precision:.4f}% precision ({} of {})").format(
-                epoch_index, mode + 'handcuffs', handcuffs_correct, handcuffs_pred_count, **metrics)
+            ("Epoch{} {:12} {handcuffs_precision:.4f}% precision ({} of {})").format(
+                epoch_index, mode + '  handcuffs', handcuffs_correct, handcuffs_pred_count, **metrics)
         )
         log.info(
-            ("Epoch{} {:10} {slingshot_precision:.4f}% precision ({} of {})").format(
-                epoch_index, mode + 'slingshot', slingshot_correct, slingshot_pred_count, **metrics)
+            ("Epoch{} {:12} {slingshot_precision:.4f}% precision ({} of {})").format(
+                epoch_index, mode + '  slingshot', slingshot_correct, slingshot_pred_count, **metrics)
         )
         log.info(
-            ("Epoch{} {:10} {firecrackers_precision:.4f}% precision ({} of {})").format(
-                epoch_index, mode + 'firecrackers', firecrackers_correct, firecrackers_pred_count, **metrics)
+            ("Epoch{} {:12} {firecrackers_precision:.4f}% precision ({} of {})").format(
+                epoch_index, mode + '  firecrackers', firecrackers_correct, firecrackers_pred_count, **metrics)
         )
         log.info(
-            ("Epoch{} {:10} {nailpolish_precision:.4f}% precision ({} of {})").format(
-                epoch_index, mode + 'nailpolish', nailpolish_correct, nailpolish_pred_count, **metrics)
+            ("Epoch{} {:12} {nailpolish_precision:.4f}% precision ({} of {})").format(
+                epoch_index, mode + '  nailpolish', nailpolish_correct, nailpolish_pred_count, **metrics)
         )
 
     def main(self):
